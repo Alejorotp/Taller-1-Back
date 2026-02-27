@@ -31,8 +31,8 @@ class mon_data {
 }
 
 export function normalize(monsters) {  
-    monsters = monsters.map(m => new mon_data(m.index, m.name, m.size, m.type, m.alignment, m.challenge_rating, m.armor_class, m.hit_points, m.speed.walk, new stats(m.strength,m.dexterity, m.constitution, m.intelligence, m.wisdom, m.charisma),m.damage_inmunities.length(),m.damage_resistance.length(),m.damage_vulnerabilites.length(), m.legendary_actions?.length() > 0)
-)
+    monsters = monsters.map(m => new mon_data(m.index, m.name, m.size, m.type, m.alignment, m.challenge_rating, m.armor_class, m.hit_points, m.speed.walk, new stats(m.strength,m.dexterity, m.constitution, m.intelligence, m.wisdom, m.charisma),m.damage_immunities.length,m.damage_resistances.length,m.damage_vulnerabilities.length, m.legendary_actions?.length > 0))
+    return monsters;
   
 
 }
@@ -40,5 +40,4 @@ export function normalize(monsters) {
 
 let monsters = await get_n_monsters(2)
 monsters = normalize(monsters)
-console.log(monsters[0].damage_inmunities)
 console.log(monsters)

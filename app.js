@@ -1,4 +1,4 @@
-async function get_monsters_n() {
+async function get_monsters_list() {
 
     const response = await fetch("https://www.dnd5eapi.co/api/monsters");
 
@@ -7,5 +7,5 @@ async function get_monsters_n() {
     return data;
 }
 
-const monster = await get_monsters_n();
+const monster = await get_monsters_list();
 console.log(monster);

@@ -160,5 +160,3 @@ async function reduce_5(monsters) {
 
     return JSON.stringify(reduced, null, 2);
 }
-
-const result = await reduce_5(example);
